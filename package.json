@@ -1,0 +1,31 @@
+{
+  "name": "media-tracker",
+  "version": "1.0.0",
+  "description": "Track your media",
+  "main": "server.js",
+  "scripts": {
+    "test": "This works",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garrettmmoore/media-tracker.git"
+  },
+  "keywords": [
+    "Media",
+    "tracker"
+  ],
+  "author": "Garrett Moore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garrettmmoore/media-tracker/issues"
+  },
+  "homepage": "https://github.com/garrettmmoore/media-tracker#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1"
+  }
+}
