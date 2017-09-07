@@ -2,7 +2,7 @@ var express = require("express");
 var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
 
-var port = 3000;
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 
@@ -25,4 +25,4 @@ var routes = require("./controllers/media_controllers.js");
 
 app.use("/", routes);
 
-app.listen(port);
+app.listen(PORT);
