@@ -3,18 +3,30 @@ var orm = require("../config/orm.js");
 
 var media = 
 {
-    selectAll: function (){
-        
+    all: function(cb) {
+        orm.all("media", function(res) {
+          cb(res);
+        });
     },
         
-    insertOne: function (){
-        
+    create: function(cols, vals, cb) {
+        orm.create("media", cols, vals, function(res) {
+          cb(res);
+        });
     },
         
-    updateOne: function(){
-        
-    }
-}
+    update: function(objColVals, condition, cb) {
+        orm.update("media", objColVals, condition, function(res) {
+          cb(res);
+        });
+    },
+
+    delete: function(condition, cb) {
+        orm.delete("media", condition, function(res) {
+          cb(res);
+        });
+      }
+};
 
 
 // Export the database functions for the controller (catsController.js).

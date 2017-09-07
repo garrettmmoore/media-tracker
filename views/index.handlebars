@@ -1,0 +1,62 @@
+<h1>My Media</h1>
+
+<h2>My WatchList</h2>
+<ol>
+  {{#each media}}
+    {{#if this.viewed}}
+      <li>
+        {{this.media_name}}
+        {{this.personal_rating}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="viewed" value="false">
+          <button type="submit">Already Viewed</button>
+        </form>
+
+        {{> media/delete-media}}
+      </li>
+    {{/if}}
+  {{/each}}
+</ol>
+
+<h2>Media I've Seen!</h2>
+
+<ol>
+  {{#each media}}
+    {{#unless this.viewed}}
+      <li>
+        {{this.media_name}}
+        {{this.personal_rating}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="viewed" value="true">
+          <button type="submit">Haven't Viewed Yet</button>
+        </form>
+
+        {{> media/delete-media}}
+      </li>
+    {{/unless}}
+  {{/each}}
+</ol>
+
+<h2>Add Media</h2>
+<form class="create-update-form" action="/" method="POST">
+
+  <div class="form-group">
+    <label for="ca">Media Name:</label>
+    <input type="text" id="ca" name="media_name">
+  </div>
+
+  <div class="form-group">
+    <label for="slee">Where to add media?</label><br>
+    <input type="radio" name="viewed" value="1" checked> Add to WatchList<br>
+    <input type="radio" name="viewed" value="0"> Already Viewed
+  </div>
+
+    <div class="form-group">
+    <label for="ca">Personal Rating (1 - 10):</label>
+    <input type="text" id="ca" name="personal_rating">
+  </div>
+
+  <button type="submit">Add Media</button>
+</form>

@@ -27,5 +27,8 @@
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.9",
     "mysql": "^2.14.1"
+  },
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
   }
 }
