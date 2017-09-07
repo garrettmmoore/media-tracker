@@ -15,15 +15,6 @@ if(process.env.JAWSDB_URL){
     });
 };
 
-// Establish connection
-// connection.connect(function(err){
-//     if (err){
-//         console.error("error connectiong: " + err.stack);
-//         return;
-//     }
-//     console.log("connected as id " + connection.threadId + " port localhost:3000");
-// });
-
 connection.connect();
 
 // Export connection for our ORM to use
