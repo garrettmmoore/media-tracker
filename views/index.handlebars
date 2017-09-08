@@ -39,6 +39,7 @@
           {{#each media}}
             {{#if this.viewed}}
               <li>
+                <div class = "col-md-3">
                 <div class="card" style="width: 20rem;">
                   <img class="card-img-top" src="..." alt="Card image cap">
                     <div class="card-body">
@@ -52,7 +53,8 @@
                         {{> media/delete-media}}
                       </form>
                     </div>
-                </div>               
+                </div> 
+                </div>              
              </li>
             {{/if}}
           {{/each}}
