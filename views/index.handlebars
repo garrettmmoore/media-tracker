@@ -39,22 +39,29 @@
           {{#each media}}
             {{#if this.viewed}}
               <li>
-                {{this.media_name}}
-                {{this.personal_rating}}
-
-                <form action="/{{this.id}}?_method=PUT" method="POST">
-                  <input type="hidden" name="viewed" value="false">
-                  <button type="submit" class="btn btn-primary btn-lg btn-block">Already Viewed</button>
-                </form>
-
-                {{> media/delete-media}}
-              </li>
+                <div class="card" style="width: 20rem;">
+                  <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">{{this.media_name}}</h4>
+                      <p class="card-text">{{this.personal_rating}}</p>
+                    </div>
+                    <div class="card-body">
+                      <form action="/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="viewed" value="false">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Already Viewed</button>
+                        {{> media/delete-media}}
+                      </form>
+                    </div>
+                </div>               
+             </li>
             {{/if}}
           {{/each}}
         </ol>
     </div>
   </div>
 </div>
+
+
 
 <div class = "container">
   <div class = "row">
