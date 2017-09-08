@@ -31,44 +31,56 @@
     </div>
   </div>
 </div>
+<div class = "container que-media">
+  <div class = "row">
+    <div class = "col-md-12">
+      <h2>My WatchList</h2>
+        <ol>
+          {{#each media}}
+            {{#if this.viewed}}
+              <li>
+                {{this.media_name}}
+                {{this.personal_rating}}
 
-<h2>My WatchList</h2>
-<ol>
-  {{#each media}}
-    {{#if this.viewed}}
-      <li>
-        {{this.media_name}}
-        {{this.personal_rating}}
+                <form action="/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="viewed" value="false">
+                  <button type="submit">Already Viewed</button>
+                </form>
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="viewed" value="false">
-          <button type="submit">Already Viewed</button>
-        </form>
+                {{> media/delete-media}}
+              </li>
+            {{/if}}
+          {{/each}}
+        </ol>
+    </div>
+  </div>
+</div>
 
-        {{> media/delete-media}}
-      </li>
-    {{/if}}
-  {{/each}}
-</ol>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-12 completed-media">
+      <h2>Media I've Seen!</h2>
+        <ol>
+          {{#each media}}
+            {{#unless this.viewed}}
+              <li>
+                {{this.media_name}}
+                {{this.personal_rating}}
 
-<h2>Media I've Seen!</h2>
+                <form action="/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="viewed" value="true">
+                  <button type="submit">Haven't Viewed Yet</button>
+                </form>
 
-<ol>
-  {{#each media}}
-    {{#unless this.viewed}}
-      <li>
-        {{this.media_name}}
-        {{this.personal_rating}}
+                {{> media/delete-media}}
+              </li>
+            {{/unless}}
+          {{/each}}
+        </ol>
+    </div>
+  </div>
+</div>
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="viewed" value="true">
-          <button type="submit">Haven't Viewed Yet</button>
-        </form>
 
-        {{> media/delete-media}}
-      </li>
-    {{/unless}}
-  {{/each}}
-</ol>
 
 
