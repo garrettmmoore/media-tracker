@@ -10,7 +10,7 @@ if(process.env.JAWSDB_URL){
         port: 3000,
         host: "localhost",
         user: "root",
-        password: "Pugluverg51",
+        password: "",
         database: "media_db"
     });
 };
@@ -27,7 +27,7 @@ module.exports = connection;
 //   port: 3306,
 //   host: "localhost",
 //   user: "root",
-//   password: "Pugluverg51",
+//   password: "",
 //   database: "media_db"
 // });
 
