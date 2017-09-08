@@ -33,14 +33,14 @@
 </div>
 <div class = "container que-media">
   <div class = "row">
-    
+    <div class = "col-md-12"></div>
       <h2>My WatchList</h2>
         <ol>
           {{#each media}}
             {{#if this.viewed}}
               <li>
-                <div class = "col-md-3">
-                <div class="card" style="width: 20rem;">
+                <div class = "col-sm-6">
+                <div class="card">
                   <img class="card-img-top" src="..." alt="Card image cap">
                     <div class="card-body">
                       <h4 class="card-title">{{this.media_name}}</h4>
@@ -59,7 +59,7 @@
             {{/if}}
           {{/each}}
         </ol>
-    
+    </div>
   </div>
 </div>
 
