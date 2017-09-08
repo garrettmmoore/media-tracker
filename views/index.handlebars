@@ -31,15 +31,15 @@
     </div>
   </div>
 </div>
-<div class = "container que-media">
+<div class = "container">
   <div class = "row">
-    <div class = "col-md-12"></div>
+    <div class = "col-md-12 que-media"></div>
       <h2>My WatchList</h2>
         <ol>
           {{#each media}}
             {{#if this.viewed}}
-              <li>
-                <div class = "col-sm-6">
+            <div class = "col-sm-6">
+              <li>                
                 <div class="card">
                   <img class="card-img-top" src="..." alt="Card image cap">
                     <div class="card-body">
@@ -53,9 +53,9 @@
                         {{> media/delete-media}}
                       </form>
                     </div>
-                </div> 
-                </div>              
+                </div>                               
              </li>
+             </div>
             {{/if}}
           {{/each}}
         </ol>
@@ -63,8 +63,39 @@
   </div>
 </div>
 
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-12 completed-media"></div>
+      <h2>Media I've Seen!</h2>
+        <ol>
+          {{#each media}}
+            {{#unless this.viewed}}
+            <div class = "col-sm-6">
+              <li>                
+                <div class="card">
+                  <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">{{this.media_name}}</h4>
+                      <p class="card-text">{{this.personal_rating}}</p>
+                    </div>
+                    <div class="card-body">
+                      <form action="/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="viewed" value="true">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Haven't Viewed Yet</button>
+                        {{> media/delete-media}}
+                      </form>
+                    </div>
+                </div>                               
+             </li>
+             </div>
+            {{/unless}}
+          {{/each}}
+        </ol>
+    </div>
+  </div>
+</div>
 
-
+{{!-- 
 <div class = "container">
   <div class = "row">
     <div class = "col-md-12 completed-media">
@@ -88,7 +119,7 @@
         </ol>
     </div>
   </div>
-</div>
+</div> --}}
 
 
 
