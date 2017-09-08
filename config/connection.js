@@ -20,7 +20,7 @@ connection.connect();
 // Export connection for our ORM to use
 module.exports = connection;
 
-// Set up MySQL connection.
+// // Set up MySQL connection.
 // var mysql = require("mysql");
 
 // var connection = mysql.createConnection({

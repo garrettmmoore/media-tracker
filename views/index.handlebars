@@ -1,39 +1,45 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
+<div class="jumbotron jumbotron-fluid jumbo-media">
+  <div class="container jumbo-header">
     <h1 class="display-3">MediaTrak</h1>
-    <p class="lead">Create a running to-do list of shows, movies, and games you've been meaning to check out!</p>
+    <p class="lead">Create a running to-do list of shows and movies you've been meaning to check out!</p>
   </div>
-</div>
-<div class = "container">
-  <div class = "row">
-    <div class = "col-md-12">
-      <h2>Add Media</h2>
-        <form class="create-update-form" action="/" method="POST">
+  <div class = "container media-input">
+    <div class = "row">
+      <div class = "col-md-12">
+        
+          <form class="create-update-form" action="/" method="POST">
+            
+            <div class="form-group">
+              
+              <label for="ca"><h3>Add Media Name:</h3></label>
+              <input class="form-control form-control-lg" type="text" id="ca" name="media_name" placeholder="Add media to watchlist here.">
+              
+            </div>
 
-          <div class="form-group">
-            <label for="ca">Media Name:</label>
-            <input type="text" id="ca" name="media_name">
-          </div>
+            <div class="form-group">
+              <label for="ca"><h3>Personal Rating:</h3></label>
+              <input class="form-control form-control-lg" type="text" id="ca" name="personal_rating" placeholder="Enter a value from 1 -10">
+              
+            </div>
 
-          <div class="form-group">
-            <label for="slee">Where to add media?</label><br>
-            <input type="radio" name="viewed" value="1" checked> Add to WatchList<br>
-            <input type="radio" name="viewed" value="0"> Already Viewed
-          </div>
+            <div class="form-group">
+              <label for="slee"></label><br>
+              <input type="radio" name="viewed" value="1" checked> Add to WatchList<br>
+              <input type="radio" name="viewed" value="0"> Already Viewed
+            </div>
 
-          <div class="form-group">
-            <label for="ca">Personal Rating (1 - 10):</label>
-            <input type="text" id="ca" name="personal_rating">
-          </div>
 
-          <button type="submit">Add Media</button>
-        </form>
+
+            <button type="submit" class="btn btn-lg btn-block main-button">Add Media</button>
+          </form>
+      </div>
     </div>
   </div>
 </div>
-<div class = "container">
+
+<div class = "container que-media">
   <div class = "row">
-    <div class = "col-md-12 que-media"></div>
+    <div class = "col-md-12 "></div>
       <h2>My WatchList</h2>
         <ol>
           {{#each media}}
@@ -41,17 +47,18 @@
             <div class = "col-sm-6">
               <li>                
                 <div class="card">
-                  <img class="card-img-top" src="..." alt="Card image cap">
+                  <img class="card-img-top" src="..." alt="">
                     <div class="card-body">
-                      <h4 class="card-title">{{this.media_name}}</h4>
-                      <p class="card-text">{{this.personal_rating}}</p>
+                      <h4 class="card-title">Media Name: {{this.media_name}}</h4>
+                      <h4 class="card-text">Personal Rating: {{this.personal_rating}}</h4>
                     </div>
                     <div class="card-body">
                       <form action="/{{this.id}}?_method=PUT" method="POST">
                         <input type="hidden" name="viewed" value="false">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Already Viewed</button>
-                        {{> media/delete-media}}
+                        <button type="submit" class="btn btn-lg btn-block main-button">Already Viewed</button>
+                        
                       </form>
+                      {{> media/delete-media}}
                     </div>
                 </div>                               
              </li>
@@ -63,9 +70,9 @@
   </div>
 </div>
 
-<div class = "container">
+<div class = "container completed-media">
   <div class = "row">
-    <div class = "col-md-12 completed-media"></div>
+    <div class = "col-md-12 "></div>
       <h2>Media I've Seen!</h2>
         <ol>
           {{#each media}}
@@ -73,17 +80,18 @@
             <div class = "col-sm-6">
               <li>                
                 <div class="card">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                      <h4 class="card-title">{{this.media_name}}</h4>
-                      <p class="card-text">{{this.personal_rating}}</p>
+                  <img class="card-img-top" src="..." alt="">
+                    <div class="card-body card-information">
+                      <h4 class="card-title">Media Name: {{this.media_name}}</h4>
+                      <h4 class="card-text">Personal Rating: {{this.personal_rating}}</h4>
                     </div>
                     <div class="card-body">
                       <form action="/{{this.id}}?_method=PUT" method="POST">
                         <input type="hidden" name="viewed" value="true">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Haven't Viewed Yet</button>
-                        {{> media/delete-media}}
+                        <button type="submit" class="btn btn-lg btn-block main-button">Haven't Viewed Yet</button>
+                        
                       </form>
+                      {{> media/delete-media}}
                     </div>
                 </div>                               
              </li>
@@ -94,6 +102,11 @@
     </div>
   </div>
 </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">@garrettmoore</p>
+      </div>
+    </footer>
 
 {{!-- 
 <div class = "container">

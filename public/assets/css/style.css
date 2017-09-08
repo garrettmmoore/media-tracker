@@ -1,7 +1,19 @@
+body{
+  background-color: #0C0032;
+}
+
+
+h2{
+  color: white;
+  text-align:center;
+  text-decoration: underline;
+}
+
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
+    
+    color: white
   }
   
   .label {
@@ -11,11 +23,59 @@ li {
   .create-update-form {
     padding: 5px;
     margin: 5px;
-    background: aqua;
+    background: #282828;
   }
   
   .form-group {
     margin-bottom: 5px;
   }
+  .jumbo-header{
+    text-align: center;
+  }
+  .jumbo-media{
+    /* background-color: #190061; */
+    background-image: url("../img/light.jpeg");
+    color: white;
+    background-size:cover;
+    background-repeat: no-repeat;
+  }
 
-  .
+  .media-input{
+    margin-top: 350px;
+  }
+  .que-media{
+    background: #3500D3;
+  }
+  .completed-media{
+    background-color: #282828;
+    margin-top: 100px;
+    margin-bottom: 300px;
+  }
+  .card-information{
+    text-decoration: line-through;
+  }
+
+  /* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  font-family: 'Raleway', sans-serif;
+}
+.footer {
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.main-button{
+  background-color: #240090;
+}
