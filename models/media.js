@@ -28,6 +28,5 @@ var media =
       }
 };
 
-
 // Export the database functions for the controller (catsController.js).
 module.exports = media;

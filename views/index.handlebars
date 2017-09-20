@@ -6,37 +6,26 @@
   <div class = "container media-input">
     <div class = "row">
       <div class = "col-md-12">
-        
-          <form class="create-update-form" action="/" method="POST">
-            
+          <form class="create-update-form" action="/" method="POST"> 
             <div class="form-group">
-              
               <label for="ca"><h3>Add Media Name:</h3></label>
               <input class="form-control form-control-lg" type="text" id="ca" name="media_name" placeholder="Add media to watchlist here.">
-              
             </div>
-
             <div class="form-group">
               <label for="ca"><h3>Personal Rating:</h3></label>
               <input class="form-control form-control-lg" type="text" id="ca" name="personal_rating" placeholder="Enter a value from 1 -10">
-              
             </div>
-
             <div class="form-group">
               <label for="slee"></label><br>
               <input type="radio" name="viewed" value="1" checked> Add to WatchList<br>
               <input type="radio" name="viewed" value="0"> Already Viewed
             </div>
-
-
-
             <button type="submit" class="btn btn-lg btn-block main-button">Add Media</button>
           </form>
       </div>
     </div>
   </div>
 </div>
-
 <div class = "container que-media">
   <div class = "row">
     <div class = "col-md-12 "></div>
@@ -56,7 +45,6 @@
                       <form action="/{{this.id}}?_method=PUT" method="POST">
                         <input type="hidden" name="viewed" value="false">
                         <button type="submit" class="btn btn-lg btn-block main-button">Already Viewed</button>
-                        
                       </form>
                       {{> media/delete-media}}
                     </div>
@@ -107,33 +95,3 @@
         <p class="text-muted">@garrettmoore</p>
       </div>
     </footer>
-
-{{!-- 
-<div class = "container">
-  <div class = "row">
-    <div class = "col-md-12 completed-media">
-      <h2>Media I've Seen!</h2>
-        <ol>
-          {{#each media}}
-            {{#unless this.viewed}}
-              <li>
-                {{this.media_name}}
-                {{this.personal_rating}}
-
-                <form action="/{{this.id}}?_method=PUT" method="POST">
-                  <input type="hidden" name="viewed" value="true">
-                  <button type="submit" class="btn btn-primary btn-lg btn-block">Haven't Viewed Yet</button>
-                </form>
-
-                {{> media/delete-media}}
-              </li>
-            {{/unless}}
-          {{/each}}
-        </ol>
-    </div>
-  </div>
-</div> --}}
-
-
-
-
