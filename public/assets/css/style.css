@@ -1,73 +1,77 @@
-body{
+body {
   background-color: #0C0032;
 }
 
-
-h1{
+h1 {
   color: white;
-  text-align:center;
+  text-align: center;
 }
 
 li {
-    padding: 5px;
-    margin: 5px;
-    
-    color: white
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: #282828;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
-  .jumbo-header{
-    text-align: center;
-    font-style: bold;
-  }
-  .jumbo-media{
-    /* background-color: #190061; */
-    background-image: url("../img/light.jpeg");
-    color: white;
-    background-size:cover;
-    background-repeat: no-repeat;
-  }
+  padding: 5px;
+  margin: 5px;
+  color: white
+}
 
-  .media-input{
-    margin-top: 350px;
-  }
-  .que-media{
-    background: #3500D3;
-  }
-  .completed-media{
-    background-color: #282828;
-    margin-top: 100px;
-    margin-bottom: 300px;
-  }
-  .card-information{
-    text-decoration: line-through;
-  }
+.label {
+  font-weight: bold;
+}
 
-  /* Sticky footer styles
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: #282828;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.jumbo-header {
+  text-align: center;
+  font-style: bold;
+}
+
+.jumbo-media {
+  background-image: url("../img/light.jpeg");
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.media-input {
+  margin-top: 350px;
+}
+
+.que-media {
+  background: #3500D3;
+}
+
+.completed-media {
+  background-color: #282828;
+  margin-top: 100px;
+  margin-bottom: 300px;
+}
+
+.card-information {
+  text-decoration: line-through;
+}
+
+
+/* Sticky footer styles
 -------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   font-family: 'Raleway', sans-serif;
 }
-.footer {
 
+.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -76,6 +80,6 @@ body {
   background-color: #f5f5f5;
 }
 
-.main-button{
+.main-button {
   background-color: #240090;
 }
